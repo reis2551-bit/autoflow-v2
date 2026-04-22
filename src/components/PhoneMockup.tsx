@@ -106,7 +106,7 @@ export function PhoneMockup({ className = "", forceNicheSlug }: PhoneMockupProps
                 <div
                   className={`max-w-[80%] rounded-lg px-3 py-2 leading-relaxed ${
                     msg.side === "client"
-                      ? "bg-[#202c33] text-[var(--text)]"
+                      ? "bg-[#202c33] text-white"
                       : "bg-[#005c4b] text-white"
                   }`}
                 >

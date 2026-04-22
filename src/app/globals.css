@@ -156,7 +156,22 @@
   animation: typing-dot 1.2s infinite 0.4s;
 }
 
+/* Hero kicker blinking dot */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+
+.kicker-dot {
+  animation: blink 1.4s ease-in-out infinite;
+}
+
 /* Ticker animation */
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .ticker-wrap {
   overflow: hidden;
   white-space: nowrap;
@@ -164,7 +179,7 @@
 
 .ticker-content {
   display: inline-block;
-  animation: ticker 40s linear infinite;
+  animation: tickerScroll 40s linear infinite;
 }
 
 .ticker-content:hover {

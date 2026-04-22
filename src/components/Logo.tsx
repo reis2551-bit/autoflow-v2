@@ -19,54 +19,41 @@ export function Logo({ className = "", showText = true, size = 32 }: LogoProps) 
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        {/* 3 diagonal ascending strokes */}
-        <line
-          x1="4"
-          y1="26"
-          x2="10"
-          y2="6"
-          stroke="#FF6A00"
+        <style>{`
+          @keyframes flowLoop {
+            0%   { stroke-dashoffset: 25; stroke-opacity: 0; }
+            15%  { stroke-opacity: 1; }
+            85%  { stroke-opacity: 1; }
+            100% { stroke-dashoffset: -25; stroke-opacity: 0; }
+          }
+        `}</style>
+        <path
+          d="M4 26 L13 6"
+          stroke="var(--accent)"
           strokeWidth="3.5"
           strokeLinecap="round"
-          strokeDasharray="24"
-          strokeDashoffset="24"
-          style={{
-            animation: "stroke-draw 0.5s ease forwards 0s",
-          }}
+          strokeDasharray="25"
+          style={{ animation: "flowLoop 1.5s ease-in-out infinite 0s" }}
         />
-        <line
-          x1="13"
-          y1="26"
-          x2="19"
-          y2="6"
-          stroke="#FF6A00"
+        <path
+          d="M12 27 L21 7"
+          stroke="var(--accent)"
           strokeWidth="3.5"
           strokeLinecap="round"
-          strokeDasharray="24"
-          strokeDashoffset="24"
-          style={{
-            animation: "stroke-draw 0.5s ease forwards 0.15s",
-          }}
+          strokeDasharray="25"
+          style={{ animation: "flowLoop 1.5s ease-in-out infinite 0.25s" }}
         />
-        <line
-          x1="22"
-          y1="26"
-          x2="28"
-          y2="6"
-          stroke="#FF6A00"
+        <path
+          d="M20 28 L29 8"
+          stroke="var(--accent)"
           strokeWidth="3.5"
           strokeLinecap="round"
-          strokeDasharray="24"
-          strokeDashoffset="24"
-          style={{
-            animation: "stroke-draw 0.5s ease forwards 0.3s",
-          }}
+          strokeDasharray="25"
+          style={{ animation: "flowLoop 1.5s ease-in-out infinite 0.5s" }}
         />
       </svg>
       {showText && (
-        <span
-          className="font-heading text-xl font-bold tracking-tight text-[var(--text)]"
-        >
+        <span className="font-heading text-xl font-bold tracking-tight text-[var(--text)]">
           Autoflow
         </span>
       )}

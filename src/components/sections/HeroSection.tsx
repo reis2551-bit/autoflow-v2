@@ -14,27 +14,53 @@ export function HeroSection() {
       className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
       aria-label="Hero"
     >
-      {/* Grain texture overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-          backgroundSize: "128px",
-        }}
-        aria-hidden="true"
-      />
-      {/* Decorative accent line top-left */}
-      <div
-        className="pointer-events-none absolute left-0 top-0 h-1 w-32 bg-[var(--accent)]"
-        aria-hidden="true"
-      />
+      {/* Animated diagonal strokes background */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.18]"
+          viewBox="0 0 1440 700"
+          preserveAspectRatio="xMidYMid slice"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <style>{`
+            @keyframes bgFlow {
+              0%   { stroke-dashoffset: 750; stroke-opacity: 0; }
+              12%  { stroke-opacity: 1; }
+              88%  { stroke-opacity: 1; }
+              100% { stroke-dashoffset: -750; stroke-opacity: 0; }
+            }
+          `}</style>
+          {[
+            { x: 60,   d: 0    }, { x: 104,  d: 0.5  }, { x: 148,  d: 1.0  },
+            { x: 300,  d: 0.8  }, { x: 344,  d: 1.3  }, { x: 388,  d: 1.8  },
+            { x: 540,  d: 1.6  }, { x: 584,  d: 2.1  }, { x: 628,  d: 2.6  },
+            { x: 780,  d: 2.4  }, { x: 824,  d: 0    }, { x: 868,  d: 0.5  },
+            { x: 1020, d: 0.3  }, { x: 1064, d: 0.8  }, { x: 1108, d: 1.3  },
+            { x: 1260, d: 1.1  }, { x: 1304, d: 1.6  }, { x: 1348, d: 2.1  },
+          ].map((l, i) => (
+            <line
+              key={i}
+              x1={l.x}
+              y1="720"
+              x2={l.x + 160}
+              y2="-20"
+              stroke="var(--accent)"
+              strokeWidth="18"
+              strokeLinecap="round"
+              strokeDasharray="750"
+              style={{ animation: `bgFlow 7s ease-in-out infinite ${l.d}s` }}
+            />
+          ))}
+        </svg>
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left — text */}
           <div className="max-w-2xl">
             <p className="mb-4 flex items-center gap-2 text-sm font-medium text-[var(--accent)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+              <span className="kicker-dot h-1.5 w-1.5 rounded-full bg-[var(--accent)]" aria-hidden="true" />
               {activeNiche.heroKicker}
             </p>
 
@@ -87,6 +113,44 @@ export function HeroSection() {
           {/* Right — phone */}
           <div className="flex justify-center lg:justify-end">
             <PhoneMockup className="w-64" />
+          </div>
+        </div>
+
+        {/* Ticker — scrolling business names */}
+        <div className="mt-14 -mx-4 sm:-mx-6 lg:-mx-8">
+          <div className="border-y border-[var(--border)] py-3 ticker-wrap opacity-50">
+            <div className="ticker-content text-xs font-medium text-[var(--muted)] tracking-wide">
+              {[
+                "Eletricista Martins",
+                "Canalização Silva",
+                "Limpezas Costa",
+                "Jardinagem Rodrigues",
+                "Climatização Norte",
+                "Handyman Ferreira",
+                "Nail Studio Aline",
+                "Eletricista Carvalho",
+                "Reparações Pereira",
+                "Limpezas Alves",
+                "Canalização Fonseca",
+                "Climatização Sul",
+                "Eletricista Martins",
+                "Canalização Silva",
+                "Limpezas Costa",
+                "Jardinagem Rodrigues",
+                "Climatização Norte",
+                "Handyman Ferreira",
+                "Nail Studio Aline",
+                "Eletricista Carvalho",
+                "Reparações Pereira",
+                "Limpezas Alves",
+                "Canalização Fonseca",
+                "Climatização Sul",
+              ].map((name, i) => (
+                <span key={i} className="mx-6">
+                  {name} <span className="text-[var(--accent)] mx-2">·</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
