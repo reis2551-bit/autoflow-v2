@@ -26,13 +26,12 @@ export default function HomePage() {
     <>
       <Navbar />
       <main id="main-content">
-        <HeroSection />
         <NicheSelectorSection />
+        <HeroSection />
         <ProblemSection />
         <ROISection />
         <SolutionSection />
         <WhatsAppDemoSection />
-        <ComparisonSection />
         <CaseAnchorSection />
         <PricingSection />
         <FAQShortSection />

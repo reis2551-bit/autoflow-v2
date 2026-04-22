@@ -18,7 +18,7 @@ export function PricingSection() {
 
   return (
     <section
-      className="section-padding bg-[var(--bg-2)]"
+      className="section-padding bg-[var(--bg-2)] border-y border-[var(--border)]"
       id="precos"
       aria-labelledby="pricing-heading"
     >
@@ -60,7 +60,7 @@ export function PricingSection() {
             >
               Anual{" "}
               <span className="ml-1 rounded-full bg-[var(--success)]/20 px-1.5 py-0.5 text-xs text-[var(--success)]">
-                −17%
+                setup grátis
               </span>
             </button>
           </div>

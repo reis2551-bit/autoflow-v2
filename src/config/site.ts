@@ -23,20 +23,20 @@ export const siteConfig = {
       name: "Arrancar",
       monthly: 39,
       setup: 199,
-      annualMonthly: 32, // 39 * 10 / 12
+      annualMonthly: 39,
     },
     crescer: {
       name: "Crescer",
       monthly: 149,
       setup: 349,
-      annualMonthly: 124,
+      annualMonthly: 149,
       featured: true,
     },
     total: {
       name: "Total",
       monthly: 379,
       setup: 590,
-      annualMonthly: 315,
+      annualMonthly: 379,
     },
   },
 } as const;

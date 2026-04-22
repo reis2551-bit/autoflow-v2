@@ -2,7 +2,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 
 export function ComparisonSection() {
   return (
-    <section className="section-padding bg-[var(--bg-2)]" aria-labelledby="comparison-heading">
+    <section className="section-padding bg-[var(--bg-2)] border-y border-[var(--border)]" aria-labelledby="comparison-heading">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-12">
           <h2

@@ -11,16 +11,21 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+      className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28"
       aria-label="Hero"
     >
-      {/* Background glow */}
+      {/* Grain texture overlay */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 w-[800px] h-[600px] rounded-full opacity-10"
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
         style={{
-          background:
-            "radial-gradient(ellipse at center, var(--accent) 0%, transparent 70%)",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundSize: "128px",
         }}
+        aria-hidden="true"
+      />
+      {/* Decorative accent line top-left */}
+      <div
+        className="pointer-events-none absolute left-0 top-0 h-1 w-32 bg-[var(--accent)]"
         aria-hidden="true"
       />
 

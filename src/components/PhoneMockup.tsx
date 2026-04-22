@@ -19,7 +19,7 @@ export function PhoneMockup({ className = "", forceNicheSlug }: PhoneMockupProps
   const [showTyping, setShowTyping] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   const clearAllTimeouts = () => {
     timeouts.current.forEach(clearTimeout);
@@ -67,7 +67,9 @@ export function PhoneMockup({ className = "", forceNicheSlug }: PhoneMockupProps
   }, [activeNiche.slug]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
   }, [visibleMessages, showTyping]);
 
   return (
@@ -80,7 +82,7 @@ export function PhoneMockup({ className = "", forceNicheSlug }: PhoneMockupProps
         </div>
 
         {/* WhatsApp screen */}
-        <div className="h-[480px] flex flex-col bg-[#0b141a]">
+        <div className="h-[560px] flex flex-col bg-[#0b141a]">
           {/* WA Header */}
           <div className="flex items-center gap-2 px-3 py-2 bg-[#1f2c34]">
             <div className="h-8 w-8 rounded-full bg-[var(--accent)] flex items-center justify-center text-xs font-bold text-white shrink-0">
@@ -95,7 +97,7 @@ export function PhoneMockup({ className = "", forceNicheSlug }: PhoneMockupProps
           </div>
 
           {/* Messages area */}
-          <div className="flex-1 overflow-y-auto px-2 py-3 space-y-2 text-xs">
+          <div ref={messagesContainerRef} className="flex-1 overflow-y-auto px-2 py-3 space-y-2 text-xs">
             {visibleMessages.map((msg, i) => (
               <div
                 key={i}
@@ -123,7 +125,6 @@ export function PhoneMockup({ className = "", forceNicheSlug }: PhoneMockupProps
               </div>
             )}
 
-            <div ref={bottomRef} />
           </div>
 
           {/* Input bar */}

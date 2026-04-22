@@ -130,7 +130,7 @@ export function WhatsAppDemo() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Escreve aqui..."
             disabled={showOverlay || isTyping}
-            className="flex-1 rounded-full bg-[#2a3942] px-4 py-2 text-sm text-[var(--text)] placeholder-[var(--muted)] border-none outline-none disabled:opacity-50"
+            className="flex-1 rounded-full bg-[#2a3942] px-4 py-2 text-sm text-white placeholder-[#8a9ba8] border-none outline-none disabled:opacity-50"
             aria-label="Mensagem para a IA de demonstração"
           />
           <button
@@ -147,20 +147,31 @@ export function WhatsAppDemo() {
 
         {/* Overlay after 3 messages */}
         {showOverlay && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[var(--bg)]/90 backdrop-blur-sm p-6 text-center">
-            <p className="text-lg font-bold text-[var(--text)]">
-              Gostaste da demo?
-            </p>
-            <p className="text-sm text-[var(--muted)]">
-              A IA real é treinada com os teus preços, horários e tom específicos.
-            </p>
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[var(--bg)]/95 backdrop-blur-sm p-6 text-center">
+            <div className="h-12 w-12 rounded-2xl bg-[var(--accent)] flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(201,79,0,0.3)]">
+              🎯
+            </div>
+            <div>
+              <p className="text-base font-bold text-[var(--text)] mb-1">
+                Já viste como funciona.
+              </p>
+              <p className="text-sm text-[var(--muted)]">
+                A versão real é treinada com os teus preços e horários — em 7 dias está ativa.
+              </p>
+            </div>
             <Link
-              href={`https://wa.me/${siteConfig.whatsappNumber}?text=Olá! Quero ver a demo real para o meu negócio.`}
+              href={`https://wa.me/${siteConfig.whatsappNumber}?text=Olá! Quero arrancar com a Autoflow para o meu negócio.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3 text-sm font-semibold text-white hover:bg-[#20b958] transition-colors"
+              className="w-full flex items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-6 py-3 text-sm font-semibold text-white hover:bg-[#168a40] transition-colors shadow-md"
             >
-              <WhatsAppIcon /> Falar com um humano real
+              <WhatsAppIcon /> Quero isto no meu negócio
+            </Link>
+            <Link
+              href="/auditoria"
+              className="w-full flex items-center justify-center rounded-xl border border-[var(--border)] bg-white px-6 py-3 text-sm font-semibold text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+            >
+              Marcar chamada gratuita de 30 min
             </Link>
             <button
               onClick={handleReset}

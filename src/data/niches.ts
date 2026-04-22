@@ -30,110 +30,6 @@ export interface NicheData {
 
 export const niches: NicheData[] = [
   {
-    slug: "barbearia",
-    name: "Barbearia",
-    emoji: "💈",
-    heroKicker: "Para barbeiros que não param de trabalhar",
-    heroH1: "Estás a cortar. O telemóvel toca. A Autoflow atende por ti.",
-    anchorPhrase:
-      "Quantas marcações perdes por mês porque não consegues responder durante um corte?",
-    pains: [
-      "Durante os cortes não podes atender — os clientes ligam e desligam sem esperar.",
-      "As marcações de último momento nunca chegam a tempo porque estás ocupado.",
-      "Passar as noites a responder WhatsApps é tempo que não tens.",
-    ],
-    benefits: [
-      "WhatsApp responde imediatamente, mesmo durante um corte.",
-      "Marcações automáticas entram direto no teu calendário.",
-      "SMS lembra o cliente 24h antes — chega de falhas.",
-      "Site aparece no Google Maps quando alguém pesquisa barbeiro perto.",
-    ],
-    roiDefaults: { callsLostPerWeek: 4, avgTicket: 22, conversionRate: 25 },
-    conversation: [
-      { side: "client", text: "Olá! Têm vaga hoje à tarde?" },
-      {
-        side: "business",
-        text: "Olá! Temos disponibilidade hoje às 17h ou às 18h30. Qual preferes?",
-      },
-      { side: "client", text: "17h está bem 👍" },
-      {
-        side: "business",
-        text: "Perfeito! Marcação confirmada para hoje às 17h. Receberás um SMS de lembrete amanhã. Até já! ✂️",
-      },
-    ],
-    faqs: [
-      {
-        q: "A IA consegue gerir o meu horário de cortes?",
-        a: "Sim. Sincroniza com o teu Google Calendar e só oferece horários livres.",
-      },
-      {
-        q: "E se quiser bloquear um dia de folga?",
-        a: "Bloqueia no Google Calendar e a IA deixa de oferecer esse horário automaticamente.",
-      },
-      {
-        q: "Os meus clientes habituais continuam a falar para o mesmo número?",
-        a: "Sim, ficas com o mesmo número WhatsApp. Eles não notam diferença.",
-      },
-    ],
-    testimonial: {
-      quote:
-        "Antes passava as noites a responder WhatsApps. Agora o sistema responde sozinho e agenda tudo. No primeiro mês tive 8 clientes novos sem fazer nada diferente.",
-      name: "João Martins",
-      role: "Canalizador · Lisboa",
-      result: "+8 clientes no 1.º mês",
-    },
-  },
-  {
-    slug: "cabeleireiro",
-    name: "Cabeleireiro",
-    emoji: "✂️",
-    heroKicker: "Para cabeleireiros que perdem marcações todos os dias",
-    heroH1: "A trabalhar com as mãos. O WhatsApp responde sozinho.",
-    anchorPhrase:
-      "Quantas marcações perdes por mês porque não consegues responder durante um tratamento?",
-    pains: [
-      "Com as mãos ocupadas não consegues responder — os clientes passam para a concorrência.",
-      "As confirmações de marcação custam-te horas de chamadas semanais.",
-      "Clientes que faltam sem avisar destroem o teu dia.",
-    ],
-    benefits: [
-      "Resposta automática 24/7 — nenhuma cliente fica sem resposta.",
-      "Confirmação automática por SMS reduz falhas em 80%.",
-      "Reativação de clientes antigas que não voltam há meses.",
-      "Site profissional que aparece quando alguém pesquisa cabeleireiro perto.",
-    ],
-    roiDefaults: { callsLostPerWeek: 3, avgTicket: 35, conversionRate: 28 },
-    conversation: [
-      { side: "client", text: "Boa tarde! Têm disponibilidade esta semana?" },
-      {
-        side: "business",
-        text: "Boa tarde! Temos quinta às 15h ou sexta às 11h. Qual funciona?",
-      },
-      { side: "client", text: "Quinta às 15h perfeito!" },
-      {
-        side: "business",
-        text: "Marcado! Quinta às 15h. Enviarei SMS de lembrete na véspera. Obrigada 😊",
-      },
-    ],
-    faqs: [
-      {
-        q: "A IA fala em nome do meu salão?",
-        a: "Sim, treinamos com o nome do teu salão, os teus serviços e o teu tom.",
-      },
-      {
-        q: "Posso ver todas as marcações num só sítio?",
-        a: "Sim, no plano Crescer tens um painel com todas as conversas e marcações.",
-      },
-    ],
-    testimonial: {
-      quote:
-        "As clientes confirmam a marcação pelo WhatsApp sem eu ligar. As falhas caíram 80%. Poupei horas por semana que gastava a perseguir confirmações.",
-      name: "Sara Ferreira",
-      role: "Cabeleireira · Porto",
-      result: "−80% falhas nas marcações",
-    },
-  },
-  {
     slug: "nails",
     name: "Nails",
     emoji: "💅",
@@ -152,17 +48,27 @@ export const niches: NicheData[] = [
       "Lista de espera automática para cancelamentos de última hora.",
       "Site com galeria de trabalhos que converte visitas em clientes.",
     ],
-    roiDefaults: { callsLostPerWeek: 3, avgTicket: 28, conversionRate: 30 },
+    roiDefaults: { callsLostPerWeek: 10, avgTicket: 38, conversionRate: 40 },
     conversation: [
-      { side: "client", text: "Olá, têm vaga para unhas de gel esta semana? 💅" },
+      { side: "client", text: "Olá! Têm vaga para unhas de gel esta semana? 💅" },
       {
         side: "business",
-        text: "Olá! Temos sábado às 10h ou às 14h. Tens preferência?",
+        text: "Olá! Temos sábado às 10h ou às 14h disponíveis. É para colocar de novo ou é fill?",
       },
-      { side: "client", text: "Sábado às 10h é perfeito!" },
+      { side: "client", text: "Colocar de novo, quero um nude com glitter nas pontas." },
       {
         side: "business",
-        text: "Confirmado! Sábado às 10h para unhas de gel. Manda foto de referência se quiseres 🌸",
+        text: "Lindo! Esse estilo fica muito bem 😍 Sábado às 10h ou às 14h — qual preferes?",
+      },
+      { side: "client", text: "Às 10h por favor!" },
+      {
+        side: "business",
+        text: "Marcado! Sábado às 10h — gel nude com glitter nas pontas. Valor: €35. Manda foto de referência se quiseres que eu prepare as cores 🌸",
+      },
+      { side: "client", text: "Vou mandar já uma foto de inspiração!" },
+      {
+        side: "business",
+        text: "Perfeito, fico à espera 💕 Até sábado!",
       },
     ],
     faqs: [
@@ -195,7 +101,7 @@ export const niches: NicheData[] = [
       "Marcação entra no calendário sem tu precisares de parar o que estás a fazer.",
       "Site aparece em pesquisas locais de urgências elétricas.",
     ],
-    roiDefaults: { callsLostPerWeek: 4, avgTicket: 120, conversionRate: 35 },
+    roiDefaults: { callsLostPerWeek: 10, avgTicket: 120, conversionRate: 50 },
     conversation: [
       {
         side: "client",
@@ -203,17 +109,22 @@ export const niches: NicheData[] = [
       },
       {
         side: "business",
-        text: "Bom dia! Entendido — quadro a disparar pode ser sobrecarga ou curto-circuito. Qual é o teu código postal?",
+        text: "Bom dia! Percebido 🔧 Quadro a disparar pode ser sobrecarga ou curto-circuito. Tens alguma tomada ou aparelho que ligaste recentemente?",
+      },
+      { side: "client", text: "Liguei uma máquina de lavar nova ontem." },
+      {
+        side: "business",
+        text: "Isso ajuda muito — provável sobrecarga no circuito da cozinha. Qual é o teu código postal?",
       },
       { side: "client", text: "1200-123, Lisboa centro." },
       {
         side: "business",
-        text: "Temos técnico disponível hoje entre as 14h e as 17h na tua zona. Deslocação + diagnóstico €65 (creditado na reparação). Confirmo?",
+        text: "Temos técnico disponível hoje entre as 14h–17h na tua zona. Deslocação + diagnóstico €65 (creditado se houver reparação). Confirmo a visita?",
       },
-      { side: "client", text: "Sim, confirmo!" },
+      { side: "client", text: "Sim! Por favor, está tudo sem luz." },
       {
         side: "business",
-        text: "✅ Agendado para hoje. O técnico liga 20 min antes de chegar. SMS enviado para confirmação.",
+        text: "✅ Agendado para hoje. O técnico liga 20 min antes de chegar. SMS de confirmação enviado. Aguenta!",
       },
     ],
     faqs: [
@@ -250,25 +161,30 @@ export const niches: NicheData[] = [
       "Agendamento direto no teu Google Calendar.",
       "Site otimizado para pesquisas locais de canalizador de urgência.",
     ],
-    roiDefaults: { callsLostPerWeek: 3, avgTicket: 95, conversionRate: 32 },
+    roiDefaults: { callsLostPerWeek: 10, avgTicket: 100, conversionRate: 50 },
     conversation: [
       {
         side: "client",
-        text: "Boa tarde, tenho uma torneira a pingar há 2 dias. Conseguem vir ver? 🔧",
+        text: "Boa tarde! Tenho uma torneira a pingar há 2 dias. Conseguem vir ver? 🔧",
       },
       {
         side: "business",
-        text: "Boa tarde! Claro 👍 Qual é a morada e prefere manhã ou tarde?",
+        text: "Boa tarde! Claro, tratamos disso. É torneira de cozinha ou de casa de banho?",
       },
-      { side: "client", text: "Rua do Almada 45, Lisboa. De manhã se puder." },
+      { side: "client", text: "Casa de banho, a misturadora." },
       {
         side: "business",
-        text: "Perfeito! Amanhã às 9h ou às 11h — qual prefere?",
+        text: "Entendido. Na maioria dos casos é a vedante ou o cartucho — reparação rápida. Qual é a morada?",
       },
-      { side: "client", text: "Às 9h está bem 🙏" },
+      { side: "client", text: "Rua do Almada 45, Lisboa. Preferência de manhã." },
       {
         side: "business",
-        text: "✅ Agendado para amanhã às 9h na Rua do Almada 45. SMS de confirmação enviado!",
+        text: "Amanhã às 9h ou às 11h — qual prefere?",
+      },
+      { side: "client", text: "Às 9h, muito obrigado 🙏" },
+      {
+        side: "business",
+        text: "✅ Amanhã às 9h na Rua do Almada 45. Deslocação €30 + peças se necessário. SMS enviado. Até amanhã!",
       },
     ],
     faqs: [
@@ -308,25 +224,30 @@ export const niches: NicheData[] = [
       "Orçamento de instalação enviado automaticamente com base na área e tipo.",
       "Site aparece em pesquisas locais de ar condicionado instalação e manutenção.",
     ],
-    roiDefaults: { callsLostPerWeek: 5, avgTicket: 140, conversionRate: 30 },
+    roiDefaults: { callsLostPerWeek: 10, avgTicket: 160, conversionRate: 40 },
     conversation: [
       {
         side: "client",
-        text: "Olá, o meu ar condicionado está a fazer um barulho estranho e a pingar água.",
+        text: "Olá! O meu AC está a fazer um barulho estranho e a pingar água no chão 😕",
       },
       {
         side: "business",
-        text: "Olá! Pingar água é normalmente a mangueira de condensados. Para marcar o técnico: código postal, marca do aparelho e se é para hoje ou amanhã?",
+        text: "Olá! Pingar água costuma ser a mangueira de condensados entupida — solução rápida. O barulho é mais vibração ou tipo click?",
       },
-      { side: "client", text: "3810-123. Daikin, 4 anos. Hoje se der." },
+      { side: "client", text: "Vibração, principalmente quando arranca." },
       {
         side: "business",
-        text: "Tenho o técnico disponível hoje entre 17h e 19h na tua zona. Deslocação + diagnóstico €45 (creditado na reparação). Confirmo?",
+        text: "Pode ser suporte solto ou filtro sujo. Qual é a marca e o código postal?",
       },
-      { side: "client", text: "Sim, confirmo." },
+      { side: "client", text: "Daikin, 4 anos. 3810-123, Aveiro." },
       {
         side: "business",
-        text: "✅ Agendado! SMS a caminho. O técnico liga 15 min antes. Obrigado pela preferência.",
+        text: "Tenho técnico disponível hoje entre as 17h–19h na tua zona. Deslocação + diagnóstico €45 (creditado se houver reparação). Confirmo?",
+      },
+      { side: "client", text: "Sim, perfeito! Já está a dar cabo dos nervos 😅" },
+      {
+        side: "business",
+        text: "✅ Agendado para hoje 17h–19h! SMS enviado. O técnico liga 15 min antes. Ficará como novo 👌",
       },
     ],
     faqs: [
@@ -359,20 +280,30 @@ export const niches: NicheData[] = [
       "Reativação de clientes que não contactam há mais de 30 dias.",
       "Site que aparece em pesquisas locais de empresa de limpeza.",
     ],
-    roiDefaults: { callsLostPerWeek: 3, avgTicket: 70, conversionRate: 20 },
+    roiDefaults: { callsLostPerWeek: 10, avgTicket: 90, conversionRate: 28 },
     conversation: [
       {
         side: "client",
-        text: "Bom dia! Precisava de um orçamento para limpeza pós-obra, apartamento T3.",
+        text: "Bom dia! Precisava de orçamento para limpeza pós-obra, apartamento T3.",
       },
       {
         side: "business",
-        text: "Bom dia! Para pós-obra T3 em Lisboa, o valor base é €180–€220 consoante o estado. Qual é a morada e quando seria?",
+        text: "Bom dia! Para pós-obra T3 o valor base é €180–€220 consoante o estado. É obra de remodelação total ou parcial?",
       },
-      { side: "client", text: "Alfama, semana que vem de preferência." },
+      { side: "client", text: "Remodelação de casas de banho e cozinha." },
       {
         side: "business",
-        text: "Temos quinta ou sexta disponíveis. Envio orçamento detalhado por email. Qual prefere?",
+        text: "Entendido — pó de reboco e rejunte pode ser intenso. Tem muito material de obra ainda no interior?",
+      },
+      { side: "client", text: "Já tiraram tudo, só falta limpar." },
+      {
+        side: "business",
+        text: "Perfeito. Orçamento firme: €195 para T3 pós-obra remodelação parcial, inclui vidros e terraço. Semana que vem em Alfama — quinta ou sexta?",
+      },
+      { side: "client", text: "Quinta de manhã se possível." },
+      {
+        side: "business",
+        text: "✅ Quinta de manhã confirmado! Enviamos contrato e confirmação por email. Obrigada 🧹",
       },
     ],
     faqs: [
@@ -405,20 +336,30 @@ export const niches: NicheData[] = [
       "Agendamento recorrente para clientes de manutenção mensal.",
       "Site que aparece em pesquisas de jardineiro e paisagismo local.",
     ],
-    roiDefaults: { callsLostPerWeek: 2, avgTicket: 60, conversionRate: 25 },
+    roiDefaults: { callsLostPerWeek: 10, avgTicket: 90, conversionRate: 30 },
     conversation: [
       {
         side: "client",
-        text: "Olá! Precisava de alguém para tratar do jardim, principalmente poda e relva.",
+        text: "Olá! Precisava de alguém para tratar do jardim — poda e corte de relva.",
       },
       {
         side: "business",
-        text: "Olá! Claro. Para orçamento preciso do tamanho aproximado do jardim e da morada. Tem árvores de grande porte?",
+        text: "Olá! Claro 🌿 Para dar orçamento: qual a morada e tem árvores de grande porte ou só arbustos?",
       },
-      { side: "client", text: "Cascais. Jardim médio, 2 árvores pequenas." },
+      { side: "client", text: "Cascais. 2 oliveiras pequenas e bastante relva." },
       {
         side: "business",
-        text: "Estimativa para poda + relva: €80–€120. Tenho disponibilidade este fim de semana. Interessa?",
+        text: "Estimativa: poda oliveiras + corte de relva €85–€110 consoante o tamanho da área. Precisa só desta vez ou quer manutenção mensal?",
+      },
+      { side: "client", text: "Mensal seria ideal, o jardim fica sempre a monte." },
+      {
+        side: "business",
+        text: "Ótimo! Com contrato mensal fica €75/visita (desconto de fidelização). Posso este sábado de manhã para começar — interessa?",
+      },
+      { side: "client", text: "Sábado de manhã perfeito! A que horas?" },
+      {
+        side: "business",
+        text: "Às 9h30. Envio confirmação por SMS e fica agendado todos os meses na mesma altura 🌳",
       },
     ],
     faqs: [
@@ -451,7 +392,7 @@ export const niches: NicheData[] = [
       "Pedido automático de avaliação Google após cada serviço.",
       "Orçamento rápido por tipo de trabalho enviado automaticamente.",
     ],
-    roiDefaults: { callsLostPerWeek: 3, avgTicket: 55, conversionRate: 22 },
+    roiDefaults: { callsLostPerWeek: 10, avgTicket: 70, conversionRate: 30 },
     conversation: [
       {
         side: "client",
@@ -459,12 +400,27 @@ export const niches: NicheData[] = [
       },
       {
         side: "business",
-        text: "Boa tarde! Móveis + candeeiro, estimativa €60–€80 consoante o número de peças. Qual é a tua zona?",
+        text: "Boa tarde! Claro 🔨 Quantas peças de mobiliário são? E o candeeiro é de parede ou de teto?",
+      },
+      { side: "client", text: "Uma cama, uma cómoda e o candeeiro é de teto." },
+      {
+        side: "business",
+        text: "Perfeito. Estimativa: €75–€95 tudo incluído. Precisas que eu traga as ferramentas ou tens de construção?",
+      },
+      { side: "client", text: "Não tenho nada, precisas de trazer." },
+      {
+        side: "business",
+        text: "Sem problema, trago tudo. Qual é a tua zona?",
       },
       { side: "client", text: "Amadora." },
       {
         side: "business",
-        text: "Trabalho nessa zona. Tenho este sábado de manhã livre. Interessa?",
+        text: "Trabalho nessa zona 👍 Tenho este sábado de manhã disponível. Às 10h serve?",
+      },
+      { side: "client", text: "Sábado às 10h é ideal, obrigado!" },
+      {
+        side: "business",
+        text: "✅ Sábado às 10h confirmado. Manda a morada exata por aqui e vemo-nos lá! 🔧",
       },
     ],
     faqs: [
@@ -491,4 +447,4 @@ export function getNicheBySlug(slug: string): NicheData | undefined {
   return niches.find((n) => n.slug === slug);
 }
 
-export const defaultNiche = niches[0]; // barbearia
+export const defaultNiche = niches.find((n) => n.slug === "eletricista") ?? niches[0];

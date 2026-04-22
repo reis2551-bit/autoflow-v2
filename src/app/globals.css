@@ -4,20 +4,20 @@
 
 @layer base {
   :root {
-    --bg: #0a0a0a;
-    --bg-2: #111111;
-    --bg-3: #171717;
-    --bg-4: #1e1e1e;
-    --border: #2a2a2a;
-    --text: #f2f2f2;
-    --muted: #888888;
-    --accent: #ff6a00;
-    --accent-h: #ff7a1a;
-    --accent-dim: rgba(255, 106, 0, 0.12);
-    --accent-border: rgba(255, 106, 0, 0.3);
-    --green: #25d366;
-    --red: #ef4444;
-    --success: #10b981;
+    --bg: #faf7f2;
+    --bg-2: #f0e8db;
+    --bg-3: #e4d8c8;
+    --bg-4: #d8c8b4;
+    --border: #c8b89e;
+    --text: #1a1410;
+    --muted: #7a6a5a;
+    --accent: #c94f00;
+    --accent-h: #e05a00;
+    --accent-dim: rgba(201, 79, 0, 0.10);
+    --accent-border: rgba(201, 79, 0, 0.25);
+    --green: #1a9e4e;
+    --red: #cc2222;
+    --success: #1a9e4e;
     --radius: 0.75rem;
   }
 
@@ -61,7 +61,7 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--bg-2);
+    background: var(--bg-3);
   }
   ::-webkit-scrollbar-thumb {
     background: var(--border);
@@ -169,6 +169,12 @@
 
 .ticker-content:hover {
   animation-play-state: paused;
+}
+
+/* Badge pulse orange ↔ cream */
+@keyframes badge-pulse {
+  0%, 100% { background-color: var(--accent); color: white; box-shadow: 0 0 16px rgba(201,79,0,0.5); }
+  50%       { background-color: var(--bg);    color: var(--accent); box-shadow: 0 0 0px rgba(201,79,0,0); }
 }
 
 /* Reduced motion */

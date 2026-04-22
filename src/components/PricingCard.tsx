@@ -27,6 +27,7 @@ interface PricingCardProps {
 
 export function PricingCard({ plan, annual }: PricingCardProps) {
   const price = annual ? plan.annualMonthly : plan.monthly;
+  const setupPct = Math.round((plan.setup / (plan.monthly * 12)) * 100);
 
   return (
     <div
@@ -40,7 +41,9 @@ export function PricingCard({ plan, annual }: PricingCardProps) {
     >
       {plan.featured && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <Badge variant="accent">⭐ Mais Escolhido</Badge>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--accent)] px-3 py-1 text-xs font-bold animate-[badge-pulse_2s_ease-in-out_infinite]">
+            ⭐ Mais Escolhido
+          </span>
         </div>
       )}
 
@@ -60,15 +63,22 @@ export function PricingCard({ plan, annual }: PricingCardProps) {
           </span>
           <span className="text-sm text-[var(--muted)] pb-1">/mês</span>
         </div>
-        {annual && (
+        {annual ? (
+          <div className="mt-1 space-y-0.5">
+            {plan.key === "arrancar" && (
+              <p className="text-xs text-[var(--muted)]">
+                Pago 3× por ano — {formatEuro(plan.monthly * 4)} de 4 em 4 meses
+              </p>
+            )}
+            <p className="text-xs font-semibold text-[var(--success)]">
+              🎁 Setup incluído — poupa {formatEuro(plan.setup)} ({setupPct}% do valor anual)
+            </p>
+          </div>
+        ) : (
           <p className="text-xs text-[var(--muted)] mt-1">
-            <span className="line-through">{formatEuro(plan.monthly)}/mês</span>
-            <span className="ml-2 text-[var(--success)]">−17% anual</span>
+            + setup {formatEuro(plan.setup)} (único)
           </p>
         )}
-        <p className="text-xs text-[var(--muted)] mt-1">
-          + setup {formatEuro(plan.setup)} (único)
-        </p>
       </div>
 
       <ul className="mb-8 flex-1 space-y-3">
@@ -103,7 +113,7 @@ export const pricingPlans: PricingPlan[] = [
       "Para quem quer começar a ser encontrado e parar de perder clientes no básico.",
     features: [
       "Website profissional pronto em 7 dias (até 5 páginas)",
-      "Domínio .pt e alojamento incluídos (1.º ano)",
+      "Domínio incluído*",
       "Google Business Profile configurado + otimizado",
       "Aparece no Google Maps e pesquisas locais",
       "Formulário de contacto com notificação WhatsApp",

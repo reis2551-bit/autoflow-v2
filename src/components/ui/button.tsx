@@ -9,9 +9,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-[var(--accent)] text-white hover:bg-[var(--accent-h)] shadow-[0_0_20px_rgba(255,106,0,0.3)] hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] hover:-translate-y-0.5",
+          "bg-[var(--accent)] text-white hover:bg-[var(--accent-h)] shadow-md hover:shadow-lg hover:-translate-y-0.5",
         whatsapp:
-          "bg-[var(--green)] text-white hover:bg-[#20b958] shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] hover:-translate-y-0.5",
+          "bg-[var(--green)] text-white hover:bg-[#168a40] shadow-md hover:shadow-lg hover:-translate-y-0.5",
         ghost:
           "text-[var(--text)] hover:bg-[var(--bg-3)] hover:text-[var(--accent)]",
         outline:

@@ -2,9 +2,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const metrics = [
-  { label: "Chamadas perdidas/semana", before: "6–8", after: "0", delta: "−100%" },
-  { label: "Clientes novos no mês", before: "2–3", after: "10–12", delta: "+300%" },
-  { label: "Horas em WhatsApp/semana", before: "6–8h", after: "0h", delta: "−100%" },
+  { label: "Chamadas perdidas/semana", before: "6–8", after: "1–2", delta: "−75%" },
+  { label: "Clientes novos no mês", before: "2–3", after: "6–8", delta: "+120%" },
+  { label: "Horas em WhatsApp/semana", before: "6–8h", after: "1h", delta: "−85%" },
 ];
 
 export function CaseAnchorSection() {

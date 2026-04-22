@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 export function FinalCTASection() {
   return (
     <section
-      className="section-padding bg-[var(--bg-2)]"
+      className="section-padding bg-[var(--bg-2)] border-t border-[var(--border)]"
       aria-labelledby="final-cta-heading"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
